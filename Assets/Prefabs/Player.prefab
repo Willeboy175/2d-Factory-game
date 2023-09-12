@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1736575174139450301}
   - component: {fileID: 8415424098642079375}
   - component: {fileID: 6192481973046950259}
+  - component: {fileID: 6054573840572586140}
   - component: {fileID: 2429060201576903949}
   - component: {fileID: 6939741787563816376}
   m_Layer: 0
@@ -102,6 +103,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2429060201576903949}
   playerSpeed: 350
+--- !u!114 &6054573840572586140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706542785303525886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f57e5e7c32ee9c4bbbde36f55cbda61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPlaceableObject: {fileID: 0}
+  placeableObjects:
+  - {fileID: 1443719523914906607, guid: ae29cdb6283bc2d49a83828c3cf58eeb, type: 3}
+  - {fileID: 3794729291968194827, guid: fc840410ab7f2c14388990adfab1f097, type: 3}
+  buttons:
+  - {fileID: 0}
+  - {fileID: 0}
+  newObjectHotkey: 101
+  mouseWheelRotation: 0
 --- !u!50 &2429060201576903949
 Rigidbody2D:
   serializedVersion: 4

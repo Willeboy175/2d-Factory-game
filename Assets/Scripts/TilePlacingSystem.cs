@@ -1,17 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TilePlacingSystem : MonoBehaviour
 {
     Vector3 mousePos;
-    public float x;
-    public float y;
-    public float z;
-    int list;
+    int list = 1;
 
-    public GameObject[] placeables;
+    public GameObject currentPlaceableObject;
+    public GameObject[] placeableObjects;
     public GameObject[] buttons;
+
+    public KeyCode newObjectHotkey = KeyCode.E;
+
+    public float mouseWheelRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +26,65 @@ public class TilePlacingSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        x = mousePos.x;
-        y = mousePos.y;
-        z = mousePos.z;
-
-        if (buttons[0] == true)
+        PlaceableObjectSelector();
+        HandleNewObjectHotkey();
+        if (currentPlaceableObject != null)
         {
+            CurrentPlaceableObjectPos();
+            RotateFromMouseWheel();
+            ReleaseIfClicked();
+        }
+    }
+
+    private void PlaceableObjectSelector()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            list = 1;
             print("button1");
         }
-        if (buttons[1] == true)
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            list = 2;
             print("button2");
+        }
+    }
+
+    private void HandleNewObjectHotkey()
+    {
+        if (Input.GetKeyDown(newObjectHotkey))
+        {
+            if (currentPlaceableObject != null)
+            {
+                Destroy(currentPlaceableObject);
+            }
+            else
+            {
+                currentPlaceableObject = Instantiate(placeableObjects[list - 1]);
+            }
+        }
+    }
+
+    private void CurrentPlaceableObjectPos()
+    {
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        currentPlaceableObject.transform.position = new Vector2(Mathf.Round(mousePos.x) + 0.5f, Mathf.Round(mousePos.y) + 0.5f);
+    }
+
+    private void RotateFromMouseWheel()
+    {
+        Debug.Log(Input.mouseScrollDelta);
+        mouseWheelRotation += Input.mouseScrollDelta.y;
+        currentPlaceableObject.transform.Rotate(Vector3.forward, mouseWheelRotation * 90f);
+        mouseWheelRotation = 0;
+    }
+
+    private void ReleaseIfClicked()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            currentPlaceableObject = null;
+            print("removed prefab");
         }
     }
 }
