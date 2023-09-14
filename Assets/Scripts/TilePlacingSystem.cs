@@ -68,7 +68,7 @@ public class TilePlacingSystem : MonoBehaviour
     private void CurrentPlaceableObjectPos()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        currentPlaceableObject.transform.position = new Vector2(Mathf.Round(mousePos.x) + 0.5f, Mathf.Round(mousePos.y) + 0.5f);
+        currentPlaceableObject.transform.position = new Vector2(Mathf.Round(mousePos.x), Mathf.Round(mousePos.y));
     }
 
     private void RotateFromMouseWheel()
