@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,10 +10,14 @@ public class PerlinNoiseMap : MonoBehaviour
 {
     Dictionary<int, GameObject> tileset;
     Dictionary<int, GameObject> tileGroups;
-    public GameObject prefabWater;
-    public GameObject PrefabGrass;
-    public GameObject PrefabStone;
-    public GameObject PrefabOre;
+    public GameObject prefab1;
+    public GameObject prefab2;
+    public GameObject prefab3;
+    public GameObject prefab4;
+    public GameObject prefab5;
+    public GameObject prefab6;
+    public GameObject prefab7;
+    public GameObject prefab8;
 
     int mapWidth = 128;
     int mapHeight = 128;
@@ -20,8 +25,9 @@ public class PerlinNoiseMap : MonoBehaviour
     List<List<int>> noiseGrid = new List<List<int>>();
     List<List<GameObject>> tileGrid = new List<List<GameObject>>();
 
-    //recommend 4 to 20
-    float magnification = 7.0f;
+    //recommend 6 to 12
+    public float magnification = 7.0f;
+    public bool randomGeneration;
 
     int xOffset = 0; // <- +>
     int yOffset = 0; // v- +^
@@ -29,6 +35,11 @@ public class PerlinNoiseMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (randomGeneration)
+        {
+            magnification = Random.Range(6.0f, 12.0f);
+        }
+
         CreateTileset();
         CreateTileGroups();
         GenerateMap();
@@ -40,10 +51,15 @@ public class PerlinNoiseMap : MonoBehaviour
         //for ease of use best ordered to match land elevation
 
         tileset = new Dictionary<int, GameObject>();
-        tileset.Add(0, prefabWater);
-        tileset.Add(1, PrefabGrass);
-        tileset.Add(2, PrefabStone);
-        tileset.Add(3, PrefabOre);
+        tileset.Add(0, prefab1);
+        tileset.Add(1, prefab2);
+        tileset.Add(2, prefab3);
+        tileset.Add(3, prefab4);
+        tileset.Add(4, prefab5);
+        tileset.Add(5, prefab6);
+        tileset.Add(6, prefab7);
+        tileset.Add(7, prefab8);
+        
     }
 
     void CreateTileGroups()
@@ -91,11 +107,9 @@ public class PerlinNoiseMap : MonoBehaviour
         float clampPerlin = Mathf.Clamp01(rawPerlin);
         float scaledPerlin = clampPerlin * tileset.Count;
 
-        //Replaced 4 with tileset
-        //Count to make adding tiles easier
-        if (scaledPerlin == 4)
+        if (scaledPerlin == tileset.Count)
         {
-            scaledPerlin = 3;
+            scaledPerlin = (tileset.Count - 1);
         }
         return Mathf.FloorToInt(scaledPerlin);
     }

@@ -167,10 +167,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d189c051f72ab4182b4ff4f048730e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabWater: {fileID: 7664574092505198337, guid: a02f51d6a9c2cfd479efbfafa340a4e7, type: 3}
-  PrefabGrass: {fileID: 8130817761802910899, guid: 675197cfdc94f0347bf2346695100ebd, type: 3}
-  PrefabStone: {fileID: 3803682008403851806, guid: 40ce5f043b06fae4896e452e0ed190be, type: 3}
-  PrefabOre: {fileID: 6840503828951018465, guid: 24944f11d64ddcf439ce667a50dea078, type: 3}
+  prefab1: {fileID: 7664574092505198337, guid: a02f51d6a9c2cfd479efbfafa340a4e7, type: 3}
+  prefab2: {fileID: 7664574092505198337, guid: a02f51d6a9c2cfd479efbfafa340a4e7, type: 3}
+  prefab3: {fileID: 8130817761802910899, guid: 675197cfdc94f0347bf2346695100ebd, type: 3}
+  prefab4: {fileID: 8130817761802910899, guid: 675197cfdc94f0347bf2346695100ebd, type: 3}
+  prefab5: {fileID: 8130817761802910899, guid: 675197cfdc94f0347bf2346695100ebd, type: 3}
+  prefab6: {fileID: 3803682008403851806, guid: 40ce5f043b06fae4896e452e0ed190be, type: 3}
+  prefab7: {fileID: 6840503828951018465, guid: 24944f11d64ddcf439ce667a50dea078, type: 3}
+  prefab8: {fileID: 6840503828951018465, guid: 24944f11d64ddcf439ce667a50dea078, type: 3}
+  magnification: 7
+  randomGeneration: 1
 --- !u!1001 &819750190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,6 +228,10 @@ PrefabInstance:
     - target: {fileID: 1736575174139450301, guid: 5e4e6ecb1a93d2c4ba7b305cf29cc0f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614391667764746747, guid: 5e4e6ecb1a93d2c4ba7b305cf29cc0f1, type: 3}
+      propertyPath: orthographic size
+      value: 65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
