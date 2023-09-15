@@ -1,10 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Burst.Intrinsics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class PerlinNoiseMap : MonoBehaviour
 {
@@ -27,7 +23,7 @@ public class PerlinNoiseMap : MonoBehaviour
 
     //recommend 6 to 12
     public float magnification = 7.0f;
-    public bool randomGeneration;
+    public bool randomGeneration = true;
 
     int xOffset = 0; // <- +>
     int yOffset = 0; // v- +^
@@ -35,14 +31,20 @@ public class PerlinNoiseMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (randomGeneration)
+        if (PauseMenuScript.random == true)
         {
             magnification = Random.Range(6.0f, 12.0f);
         }
-
+        else
+        {
+            magnification = PauseMenuScript.seed;
+        }
+        
         CreateTileset();
         CreateTileGroups();
         GenerateMap();
+
+
     }
 
     void CreateTileset()

@@ -7,6 +7,9 @@ TagManager:
   - Spawner
   - Conveyor
   - Item
+  - Water
+  - Ground
+  - Ore
   layers:
   - Default
   - TransparentFX
