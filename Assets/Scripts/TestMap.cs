@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PerlinNoiseMap : MonoBehaviour
+public class TestMap : MonoBehaviour
 {
     public GameObject playerSpawner;
 
@@ -10,12 +10,6 @@ public class PerlinNoiseMap : MonoBehaviour
     Dictionary<int, GameObject> tileGroups;
     public GameObject prefab1;
     public GameObject prefab2;
-    public GameObject prefab3;
-    public GameObject prefab4;
-    public GameObject prefab5;
-    public GameObject prefab6;
-    public GameObject prefab7;
-    public GameObject prefab8;
 
     public int mapWidth = 128;
     public int mapHeight = 128;
@@ -57,13 +51,6 @@ public class PerlinNoiseMap : MonoBehaviour
         tileset = new Dictionary<int, GameObject>();
         tileset.Add(0, prefab1);
         tileset.Add(1, prefab2);
-        tileset.Add(2, prefab3);
-        tileset.Add(3, prefab4);
-        tileset.Add(4, prefab5);
-        tileset.Add(5, prefab6);
-        tileset.Add(6, prefab7);
-        tileset.Add(7, prefab8);
-        
     }
 
     void CreateTileGroups()

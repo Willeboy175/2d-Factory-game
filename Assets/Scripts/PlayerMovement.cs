@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool gameIsPaused;
     public Rigidbody2D rb;
     public float playerSpeed = 1;
     Vector2 movement;
@@ -23,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rb.velocity = playerSpeed * Time.fixedDeltaTime * movement.normalized;
+        if (gameIsPaused == false)
+        {
+            rb.velocity = playerSpeed * Time.fixedDeltaTime * movement.normalized;
+        }
+        
     }
 }

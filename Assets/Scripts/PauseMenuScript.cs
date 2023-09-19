@@ -12,14 +12,6 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject optionsMenu;
     public bool gameIsPaused;
 
-    public GameObject newGameMenu;
-    public GameObject map;
-    public GameObject player;
-    public TMP_InputField inputField;
-    public Toggle randomSeed;
-    public static bool random;
-    public static float seed;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +23,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //gameIsPaused = !gameIsPaused;
+            gameIsPaused = !gameIsPaused;
             PauseGame();
         }
     }
@@ -56,24 +48,26 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
-    public void PlayGame()
+    public void SaveGame()
     {
-        random = randomSeed;
-
-        if (randomSeed == true)
-        {
-            map.SetActive(true);
-        }
-        else
-        {
-            string seedString = inputField.text;
-            seed = float.Parse(seedString);
-            print(seedString);
-        }
-        newGameMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+        saveMenu.SetActive(true);
     }
 
-    public void BackToMainMenu()
+    public void Options()
+    {
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void Back()
+    {
+        pauseMenu.SetActive(true);
+        saveMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+    }
+
+    public void ExitToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
