@@ -14,16 +14,13 @@ public class StartMenuScript : MonoBehaviour
     public static bool random;
     public static float seed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            BackToMainMenu();
+        }
     }
 
     public void PlayGame()

@@ -17,8 +17,8 @@ public class PerlinNoiseMap : MonoBehaviour
     public GameObject prefab7;
     public GameObject prefab8;
 
-    public int mapWidth = 128;
-    public int mapHeight = 128;
+    int mapWidth = 128;
+    int mapHeight = 128;
 
     List<List<int>> noiseGrid = new List<List<int>>();
     List<List<GameObject>> tileGrid = new List<List<GameObject>>();
@@ -41,6 +41,9 @@ public class PerlinNoiseMap : MonoBehaviour
         {
             magnification = StartMenuScript.seed;
         }
+
+        //Remember to remove this later
+        magnification = 7.0f;
         
         CreateTileset();
         CreateTileGroups();

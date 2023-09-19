@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class PauseMenuScript : MonoBehaviour
 {
@@ -23,8 +21,15 @@ public class PauseMenuScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameIsPaused = !gameIsPaused;
-            PauseGame();
+            if (saveMenu.activeSelf == true || optionsMenu.activeSelf == true)
+            {
+                Back();
+            }
+            else
+            {
+                gameIsPaused = !gameIsPaused;
+                PauseGame();
+            }
         }
     }
 
@@ -32,19 +37,16 @@ public class PauseMenuScript : MonoBehaviour
     {
         if (gameIsPaused)
         {
-            //Time.timeScale = 0;
             pauseMenu.SetActive(true);
         }
         else
         {
-            //Time.timeScale = 1;
             pauseMenu.SetActive(false);
         }
     }
 
     public void ContinueGame()
     {
-        //Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }
 
