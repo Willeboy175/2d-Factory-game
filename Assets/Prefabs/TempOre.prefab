@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4805752959836628670}
   - component: {fileID: 5608576763118062753}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TempOre
   m_TagString: Ore
   m_Icon: {fileID: 0}

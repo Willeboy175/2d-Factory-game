@@ -24,6 +24,7 @@ public class SpawnPlayer : MonoBehaviour
         if (hit)
         {
             rbSpawn.transform.position += new Vector3(0, 1, 0);
+            print("hit");
         }
         else
         {

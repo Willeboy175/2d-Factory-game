@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7413773952050775550}
   - component: {fileID: 7651541434239451895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TempGrass
   m_TagString: Ground
   m_Icon: {fileID: 0}

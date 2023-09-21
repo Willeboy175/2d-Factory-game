@@ -4565,6 +4565,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1119593249}
     - target: {fileID: 1175880001132999688, guid: 99543b8154a4f1e4ca2df524166fcaa3, type: 3}
+      propertyPath: layerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175880001132999688, guid: 99543b8154a4f1e4ca2df524166fcaa3, type: 3}
       propertyPath: cameraObject
       value: 
       objectReference: {fileID: 2038387954}
@@ -5156,7 +5160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &5922394762656525653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5581,7 +5585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7274232580642536286, guid: e2b7f25f5d277ff4e93b18ed72c45819, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7843692633870892458, guid: e2b7f25f5d277ff4e93b18ed72c45819, type: 3}
       propertyPath: inputField

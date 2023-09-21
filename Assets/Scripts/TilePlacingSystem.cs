@@ -71,7 +71,7 @@ public class TilePlacingSystem : MonoBehaviour
 
     private void RotateFromMouseWheel()
     {
-        Debug.Log(Input.mouseScrollDelta);
+        //Debug.Log(Input.mouseScrollDelta);
         mouseWheelRotation += Input.mouseScrollDelta.y;
         currentPlaceableObject.transform.Rotate(Vector3.forward, mouseWheelRotation * 90f);
         mouseWheelRotation = 0;
@@ -82,7 +82,6 @@ public class TilePlacingSystem : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             currentPlaceableObject = null;
-            print("removed prefab");
         }
     }
 }

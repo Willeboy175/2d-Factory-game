@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 580256481339458640}
   - component: {fileID: 8631392352630222128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TempGridTile
   m_TagString: Ground
   m_Icon: {fileID: 0}
