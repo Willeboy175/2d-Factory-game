@@ -38,7 +38,10 @@ public class ItemMovement : MonoBehaviour
                     timer = 0;
                 }
             }
-            
+        }
+        else if (getRotation.transform == null)
+        {
+            Destroy(item.transform.gameObject);
         }
     }
 }
