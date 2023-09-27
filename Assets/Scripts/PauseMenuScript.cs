@@ -8,7 +8,8 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject saveMenu;
     public GameObject optionsMenu;
-    public static bool gameIsPaused;
+    public GameObject buildMenuController;
+    public static bool gameIsPaused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,6 @@ public class PauseMenuScript : MonoBehaviour
             }
             else
             {
-                gameIsPaused = !gameIsPaused;
                 PauseGame();
             }
         }
@@ -35,23 +35,30 @@ public class PauseMenuScript : MonoBehaviour
 
     public void PauseGame()
     {
-        if (gameIsPaused)
+        if (gameIsPaused == false)
         {
             pauseMenu.SetActive(true);
+            buildMenuController.SetActive(false);
+            gameIsPaused = true;
         }
         else
         {
             pauseMenu.SetActive(false);
+            buildMenuController.SetActive(true);
+            gameIsPaused = false;
         }
     }
 
     public void ContinueGame()
     {
         pauseMenu.SetActive(false);
+        buildMenuController.SetActive(true);
+        gameIsPaused = false;
     }
 
     public void SaveGame()
     {
+        gameIsPaused = true;
         pauseMenu.SetActive(false);
         saveMenu.SetActive(true);
     }

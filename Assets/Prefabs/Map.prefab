@@ -234,10 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d189c051f72ab4182b4ff4f048730e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGameMenu: {fileID: 0}
-  inputField: {fileID: 0}
-  randomSeed: {fileID: 0}
-  start: 0
+  playerSpawner: {fileID: 0}
   prefab1: {fileID: 7664574092505198337, guid: a02f51d6a9c2cfd479efbfafa340a4e7, type: 3}
   prefab2: {fileID: 7664574092505198337, guid: a02f51d6a9c2cfd479efbfafa340a4e7, type: 3}
   prefab3: {fileID: 8130817761802910899, guid: 675197cfdc94f0347bf2346695100ebd, type: 3}
@@ -246,6 +243,7 @@ MonoBehaviour:
   prefab6: {fileID: 3803682008403851806, guid: 40ce5f043b06fae4896e452e0ed190be, type: 3}
   prefab7: {fileID: 6840503828951018465, guid: 24944f11d64ddcf439ce667a50dea078, type: 3}
   prefab8: {fileID: 6840503828951018465, guid: 24944f11d64ddcf439ce667a50dea078, type: 3}
+  magnification: 7
   randomGeneration: 0
 --- !u!1 &7786584584926609960
 GameObject:

@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bb4061630c0ae489115efa64301c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameIsPaused: 0
   rb: {fileID: 2429060201576903949}
   playerSpeed: 350
 --- !u!114 &6054573840572586140
@@ -115,14 +116,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f57e5e7c32ee9c4bbbde36f55cbda61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPlaceableObject: {fileID: 0}
-  placeableObjects:
+  itemPrefabs:
   - {fileID: 1443719523914906607, guid: ae29cdb6283bc2d49a83828c3cf58eeb, type: 3}
   - {fileID: 3794729291968194827, guid: fc840410ab7f2c14388990adfab1f097, type: 3}
-  buttons:
-  - {fileID: 0}
-  - {fileID: 0}
-  newObjectHotkey: 101
+  - {fileID: 2155550497089882430, guid: 461b9f3bae4ffa440ab082425414b01d, type: 3}
+  itemPreviews:
+  - {fileID: 3368476291023875442, guid: 6efb3390fc9d46744ae9413e817d7b73, type: 3}
+  - {fileID: 1040678574553162302, guid: 7a1033722b3f23e47b75c31490fb6b76, type: 3}
+  - {fileID: 2155550497089882430, guid: 4c7e807c395249a45a0083534f6ce79a, type: 3}
+  currentPrefab: {fileID: 0}
+  currentPreview: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 3328
   mouseWheelRotation: 0
 --- !u!50 &2429060201576903949
 Rigidbody2D:

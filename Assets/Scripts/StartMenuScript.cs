@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class StartMenuScript : MonoBehaviour
 {
     public GameObject newGameMenu;
+    public GameObject pauseMenuController;
+    public GameObject BuildMenuController;
     public GameObject map;
     public TMP_InputField inputField;
     public Toggle randomSeed;
@@ -38,6 +40,8 @@ public class StartMenuScript : MonoBehaviour
             print(seedString);
         }
         newGameMenu.SetActive(false);
+        pauseMenuController.SetActive(true);
+        BuildMenuController.SetActive(true);
     }
 
     public void BackToMainMenu()

@@ -41,9 +41,6 @@ public class PerlinNoiseMap : MonoBehaviour
         {
             magnification = StartMenuScript.seed;
         }
-
-        //Remember to remove this later
-        magnification = 7.0f;
         
         CreateTileset();
         CreateTileGroups();
