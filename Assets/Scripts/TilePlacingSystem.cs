@@ -10,6 +10,7 @@ public class TilePlacingSystem : MonoBehaviour
     public GameObject currentPreview;
 
     public LayerMask layerMask;
+    public LayerMask layerMaskDestroy;
     public static int list = 1;
     public float mouseWheelRotation;
     Vector3 mousePos;
@@ -23,12 +24,24 @@ public class TilePlacingSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentPrefab != null)
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SelectObjectDestroyer();
+        }
+
+        if (currentPrefab != itemPrefabs[0] && currentPrefab != null)
         {
             CurrentPreviewPos();
             RotateCurrentPreview();
             DeselectCurrentPrefab();
             PlaceCurrentPrefab();
+        }
+
+        else if (currentPrefab == itemPrefabs[0])
+        {
+            CurrentPreviewPos();
+            DeselectCurrentPrefab();
+            PlaceObjectDestroyer();
         }
     }
 
@@ -39,8 +52,18 @@ public class TilePlacingSystem : MonoBehaviour
         {
             Destroy(currentPreview);
         }
-        currentPrefab = itemPrefabs[list - 1];
-        currentPreview = Instantiate(itemPreviews[list - 1]);
+        currentPrefab = itemPrefabs[list];
+        currentPreview = Instantiate(itemPreviews[list]);
+    }
+
+    void SelectObjectDestroyer()
+    {
+        if (currentPreview != null)
+        {
+            Destroy(currentPreview);
+        }
+        currentPrefab = itemPrefabs[0];
+        currentPreview = Instantiate(itemPreviews[0]);
     }
 
     void DeselectCurrentPrefab()
@@ -81,8 +104,17 @@ public class TilePlacingSystem : MonoBehaviour
     void PlaceCurrentPrefab()
     {
         //Instantiates current prefab on the position of the preview and checks so that it doesnt collide with anyting
-        RaycastHit2D hit = Physics2D.Raycast(currentPreview.transform.position, new Vector2(0, 1), 0.4f);
+        RaycastHit2D hit = Physics2D.Raycast(currentPreview.transform.position, new Vector2(0, 1), 0.4f, layerMask);
         if (Input.GetMouseButton(0) && hit.transform == null)
+        {
+            Instantiate(currentPrefab, currentPreview.transform.position, currentPreview.transform.rotation);
+        }
+    }
+
+    void PlaceObjectDestroyer()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(currentPreview.transform.position, new Vector2(0, 1), 0.4f, layerMask);
+        if (Input.GetMouseButton(0) && hit.transform != null)
         {
             Instantiate(currentPrefab, currentPreview.transform.position, currentPreview.transform.rotation);
         }

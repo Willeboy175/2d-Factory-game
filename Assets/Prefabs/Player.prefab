@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6054573840572586140}
   - component: {fileID: 2429060201576903949}
   - component: {fileID: 6939741787563816376}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -117,10 +117,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefabs:
+  - {fileID: 8732589540582516184, guid: 7b1f83488ee1cff468d54e181c2bb8c3, type: 3}
   - {fileID: 1443719523914906607, guid: ae29cdb6283bc2d49a83828c3cf58eeb, type: 3}
   - {fileID: 3794729291968194827, guid: fc840410ab7f2c14388990adfab1f097, type: 3}
   - {fileID: 2155550497089882430, guid: 461b9f3bae4ffa440ab082425414b01d, type: 3}
   itemPreviews:
+  - {fileID: 8732589540582516184, guid: 9f7fbd49e3cd6b54aa60ae6937a344b4, type: 3}
   - {fileID: 3368476291023875442, guid: 6efb3390fc9d46744ae9413e817d7b73, type: 3}
   - {fileID: 1040678574553162302, guid: 7a1033722b3f23e47b75c31490fb6b76, type: 3}
   - {fileID: 2155550497089882430, guid: 4c7e807c395249a45a0083534f6ce79a, type: 3}
@@ -128,7 +130,10 @@ MonoBehaviour:
   currentPreview: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 3328
+    m_Bits: 3352
+  layerMaskDestroy:
+    serializedVersion: 2
+    m_Bits: 24
   mouseWheelRotation: 0
 --- !u!50 &2429060201576903949
 Rigidbody2D:
@@ -213,7 +218,7 @@ GameObject:
   - component: {fileID: 2319354134369018048}
   - component: {fileID: 2614391667764746747}
   - component: {fileID: 7262524385098987274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}

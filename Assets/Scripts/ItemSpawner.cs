@@ -11,12 +11,14 @@ public class ItemSpawner : MonoBehaviour
     public float timer = 0;
     public LayerMask layerMaskConveyor;
     public LayerMask layerMaskItem;
+    public LayerMask layerMaskOre;
 
 
     // Start is called before the first frame update
     void Start()
     {
         raycastOrigin = GetComponent<Transform>();
+        OreCheck();
     }
 
     // Update is called once per frame
@@ -34,6 +36,15 @@ public class ItemSpawner : MonoBehaviour
                 timer = 0;
             }
             
+        }
+    }
+
+    void OreCheck()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(raycastOrigin.position, raycastOrigin.right, 0.4f, layerMaskOre);
+        if (hit.transform == null)
+        {
+            Destroy(raycastOrigin.gameObject);
         }
     }
 }
