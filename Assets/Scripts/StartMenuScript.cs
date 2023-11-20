@@ -11,6 +11,7 @@ public class StartMenuScript : MonoBehaviour
     public GameObject pauseMenuController;
     public GameObject BuildMenuController;
     public GameObject map;
+    public GameObject playerUI;
     public TMP_InputField inputField;
     public Toggle randomSeed;
     public static bool random;
@@ -42,6 +43,7 @@ public class StartMenuScript : MonoBehaviour
         newGameMenu.SetActive(false);
         pauseMenuController.SetActive(true);
         BuildMenuController.SetActive(true);
+        playerUI.SetActive(true);
     }
 
     public void BackToMainMenu()

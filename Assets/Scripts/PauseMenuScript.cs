@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
+    public GameObject playerUI;
     public GameObject pauseMenu;
     public GameObject saveMenu;
     public GameObject optionsMenu;
@@ -39,12 +40,14 @@ public class PauseMenuScript : MonoBehaviour
         {
             pauseMenu.SetActive(true);
             buildMenuController.SetActive(false);
+            playerUI.SetActive(false);
             gameIsPaused = true;
         }
         else
         {
             pauseMenu.SetActive(false);
             buildMenuController.SetActive(true);
+            playerUI.SetActive(true);
             gameIsPaused = false;
         }
     }
@@ -53,6 +56,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         buildMenuController.SetActive(true);
+        playerUI.SetActive(true);
         gameIsPaused = false;
     }
 

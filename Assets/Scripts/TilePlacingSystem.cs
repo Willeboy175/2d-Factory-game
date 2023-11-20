@@ -8,6 +8,7 @@ public class TilePlacingSystem : MonoBehaviour
     public GameObject[] itemPreviews;
     public GameObject currentPrefab;
     public GameObject currentPreview;
+    public GameObject cancelText;
 
     public LayerMask layerMask;
     public LayerMask layerMaskDestroy;
@@ -54,6 +55,7 @@ public class TilePlacingSystem : MonoBehaviour
         }
         currentPrefab = itemPrefabs[list];
         currentPreview = Instantiate(itemPreviews[list]);
+        cancelText.SetActive(true);
     }
 
     void SelectObjectDestroyer()
@@ -64,6 +66,7 @@ public class TilePlacingSystem : MonoBehaviour
         }
         currentPrefab = itemPrefabs[0];
         currentPreview = Instantiate(itemPreviews[0]);
+        cancelText.SetActive(true);
     }
 
     void DeselectCurrentPrefab()
@@ -74,6 +77,7 @@ public class TilePlacingSystem : MonoBehaviour
             Destroy(currentPreview);
             currentPrefab = null;
             currentPreview = null;
+            cancelText.SetActive(false);
         }
     }
 

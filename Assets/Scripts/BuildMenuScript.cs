@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildMenuScript : MonoBehaviour
 {
+    public GameObject playerUI;
     public GameObject buildMenu;
     public GameObject pauseMenuController;
     bool active = false;
@@ -29,12 +30,14 @@ public class BuildMenuScript : MonoBehaviour
         {
             buildMenu.SetActive(true);
             pauseMenuController.SetActive(false);
+            playerUI.SetActive(false);
             active = true;
         }
         else
         {
             buildMenu.SetActive(false);
             pauseMenuController.SetActive(true);
+            playerUI.SetActive(true);
             active = false;
         }
     }
@@ -43,6 +46,7 @@ public class BuildMenuScript : MonoBehaviour
     {
         buildMenu.SetActive(false);
         pauseMenuController.SetActive(true);
+        playerUI.SetActive(true);
         active = false;
     }
 
